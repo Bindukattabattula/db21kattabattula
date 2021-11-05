@@ -1,3 +1,3 @@
-# fwb21kattabattula
-Hosted at "https://bindusri.herokuapp.com/"
+# db21kattabattula
+Hosted at https://db21kattabattula.herokuapp.com/
 <br> Class Tiger(Color(String),place(String),weight(number))
