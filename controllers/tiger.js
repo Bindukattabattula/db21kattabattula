@@ -28,9 +28,9 @@ exports.tiger_create_post = async function(req, res) {
     // Even though bodies can be in many different formats, we will be picky 
     // and require that it be a json object 
     // {"tiger_type":"goat", "cost":12, "size":"large"} 
-    document.tiger_type = req.body.tiger_type; 
-    document.Cost = req.body.Cost; 
-    document.Duration = req.body.Duration; 
+    document.color = req.body.color; 
+    document.place = req.body.place; 
+    document.weight = req.body.weight; 
     try{ 
         let result = await document.save(); 
         res.send(result); 
