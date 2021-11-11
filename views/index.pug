@@ -2,19 +2,12 @@ extends layout
 
 block content
   h1= title
-  p Welcome to my world Be happy always#{title}
-  button(type="button", class="btn btn-secondary", onclick="update()") presMe
-  br
-  br
-  div(id="target") Display
-  br
-  a(href='/tiger') Tiger Page
-
-
-      script. 
-         var client_count = 0;
-            function  update() {
-             client_count++;
-               
-             document.getElementById("target").innerHTML ="Value now "+client_count;
-            }
+  - let tiger  = results;
+  script.
+    function buy(x){
+      alert('Purchased Item: ' + x)
+   } 
+  div(class='container-fluid')
+    div(class='row')
+      each m, index in tiger  
+       div(class="col-sm-2" onclick=`buy(${index})`) #{m.color} #{m.place} #{m.weight} 
