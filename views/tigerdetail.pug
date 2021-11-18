@@ -1,0 +1,38 @@
+extends layout
+
+block content
+ h1= title
+
+  if(toShow == null)
+    h2 No instance to detail
+  else
+    - let tigerid = toShow._id
+    - let tiger_type = toShow.color
+    - let tigerquantity = toShow.place
+    - let tigercost = toShow.weight
+    - let actionid = "/resource/tiger/" + tigerid
+    script let actionid = "#{actionid}"
+    div
+    div.row
+    div(class='tigerAttr mr-3') tiger ID is: 
+      span(style="color:red") #{tigerid}
+    div.row
+    div(class='tigerAttr mr-3') tiger color is: 
+      span(style="color:red") #{tiger_type}
+    div.row
+    div(class='tigerAttr mr-3') tiger place is: 
+      span(style="color:red") #{tigerquantity}
+    div.row
+    div(class='tigerAttr mr-3') tiger weight is:
+      span(style="color:red") #{tigercost}
+    button(class="btn btn-primary m-2" onclick="detailOnid()") Goback
+    button(class="btn btn-danger m-2" onclick="cancel()") Cancel
+
+  script.
+    function cancel() {
+    // Go back to the home page for the tiger collection
+    window.location.href='/tiger'
+    }
+    function detailOnid() {
+    window.location.href='/tiger'
+    }

@@ -2,12 +2,15 @@ extends layout
 
 block content
   h1= title
-  - let tiger  = results;
+  p Welcome to #{title} bindu
+  button(type='button',onclick='update()',class='btn btn-primary') Press Me
+  div(id="target") text of Display 
   script.
-    function buy(x){
-      alert('Purchased Item: ' + x)
-   } 
-  div(class='container-fluid')
-    div(class='row')
-      each m, index in tiger  
-       div(class="col-sm-2" onclick=`buy(${index})`) #{m.color} #{m.place} #{m.weight} 
+    var client_count = 0;
+    function update(){
+      client_count +=1;
+      document.getElementById("target").innerHTML = "Value now " + client_count;
+    }
+  a(href='tiger') tiger
+
+  

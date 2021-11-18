@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  h1= title
+
+  if(toShow == null)
+    h2 No instance to update
+  else
+    - let tigerid = toShow._id
+    - let tiger_type = toShow.color
+    - let tigerquantity = toShow.place
+    - let tigercost = toShow.weight
+    - let actionid = "/resource/tiger/" + tigerid
+    script let actionid = "#{actionid}"
+    div.row(class='mb-2')
+    div.mr-1 ID is 
+      span(style="color:red")  #{tigerid}
+    form(id='tigerForm', action= actionid, method="PUT")
+      div.form-group
+      div(class="row g-3 align-items-center")
+        div(class="col-1")
+          label.tigerAttr(for='tiger_type',class="col-form-label") tiger color
+        div(class="col-auto")
+          input#tiger_type(type='text', name='tiger_type',class="form-control", value=tiger_type)
+      div.form-group
+      div(class="row g-3 align-items-center")
+        div(class="col-1")
+          label.tigerAttr(for='quantity',class="col-form-label") tiger place
+        div(class="col-auto")
+          input#quantity(type='text', name='quantity',class="form-control", value=tigerquantity)
+      div.form-group
+      div(class="row g-3 align-items-center")
+        div(class="col-1")
+          label.tigerAttr(for='cost',class="col-form-label") tiger weight
+        div(class="col-auto")
+          input#cost(type='number', name='cost',class="form-control", value=tigercost)
+      input(class="btn btn-danger m-2" type="submit")
+        //- button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete
+      button(class="btn btn-secondary m-2" onclick="cancel()") Cancel
+        
+  script.
+    document.forms['tigerForm'].addEventListener('submit', (event) => {
+    event.preventDefault();
+    // TODO do something here to show user that form is being submitted
+    fetch(event.target.action, {
+    method: 'PUT',
+    body: new URLSearchParams(new FormData(event.target)) // event.target is the form
+    }).then((resp) => {
+    return resp.json(); // or resp.text() or whatever the server sends
+    }).then((body) => {
+    alert("Save succeded")
+    // TODO handle body
+    }).catch((error) => {
+    // TODO handle error
+    alert("Save failed " + error )
+    });
+    });

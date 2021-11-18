@@ -5,16 +5,16 @@ var api_controller = require('../controllers/api');
 var tiger_controller = require('../controllers/tiger');
 /// API ROUTE ///
 // GET resources base.
-router.get('/', api_controller.api);
+router.get('/resource', api_controller.api);
 /// tiger ROUTES ///
 // POST request for creating a tiger.
-router.post('/tiger', tiger_controller.tiger_create_post);
+router.post('/resource/tiger', tiger_controller.tiger_create_post);
 // DELETE request to delete tiger.
-router.delete('/tiger/:id', tiger_controller.tiger_delete);
+router.delete('/resource/tiger/:id', tiger_controller.tiger_delete);
 // PUT request to update tiger.
-router.put('/tiger/:id', tiger_controller.tiger_update_put);
+router.put('/resource/tiger/:id', tiger_controller.tiger_update_put);
 // GET request for one tiger.
-router.get('/tiger/:id', tiger_controller.tiger_detail);
+router.get('/resource/tiger/:id', tiger_controller.tiger_detail);
 // GET request for list of all tiger items.
-router.get('/tiger', tiger_controller.tiger_list);
+router.get('/resource/tiger', tiger_controller.tiger_list);
 module.exports = router;
