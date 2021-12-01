@@ -6,21 +6,21 @@ block content
     div.form-group
     div(class="row g-3 align-items-center")
       div(class="col-1")
-         label.tigerAttr(for='tiger_type',class="col-form-label") tiger color
+         label.tigerAttr(for='color',class="col-form-label") tiger color
       div(class="col-auto")
-         input#tiger_type(type='text', name='tiger_type',class="form-control")
+         input#color(type='text', name='color',class="form-control")
     div.form-group
     div(class="row g-3 align-items-center")
       div(class="col-1")
-         label.tigerAttr(for='quantity', class="col-form-label") tiger place
+         label.tigerAttr(for='place', class="col-form-label") tiger place
       div(class="col-auto")
-         input#quantity(type='text', name='quantity',class="form-control")
+         input#place(type='text', name='place',class="form-control")
     div.form-group
     div(class="row g-3 align-items-center")
       div(class="col-1")
-         label.tigerAttr(for='cost',class="col-form-label") tiger weight
+         label.tigerAttr(for='weight',class="col-form-label") tiger weight
       div(class="col-auto")
-         input#cost(type='number', name='cost',class="form-control")
+         input#weight(type='number', name='weight',class="form-control")
     input(type="submit",class="btn btn-primary")
  script.
     document.forms['tigerForm'].addEventListener('submit', (event) => {
