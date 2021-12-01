@@ -34,9 +34,9 @@ async function recreateDB() {
   // Delete everything
   await tiger.deleteMany();
   
-  let instance1 = new tiger({color:"Red", place:"zoo",weight:20});
-  let instance2 = new tiger({color:"Black", place:"forest",weight:40});
-  let instance3 = new tiger({color:"Yellow", place:"forest",weight:70});
+  let instance1 = new tiger({color:"Red", place:"zoo",weight:100});
+  let instance2 = new tiger({color:"Black", place:"forest",weight:110});
+  let instance3 = new tiger({color:"Yellow", place:"forest",weight:120});
     
   instance1.save(function (err, doc) {
     if (err) return console.error(err);
